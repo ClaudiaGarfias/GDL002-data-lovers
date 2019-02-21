@@ -1,4 +1,4 @@
-const ctSelector = document.getElementById("country") ;   // Declarar una variable para llamar el selector de país
+const ctSelector = document.getElementById("country") ;   // llamar el selector de país
 const indSelector = document.getElementById("select-indicator"); // Declarar una variable para que me genere los indicadores de los paises
 const yrSelector = document.getElementById("since-year"); // Declarar una variable para que me genere el rango de los años automaticamente en mi selector para año 
 const ctNameToCtCode = {}; // Declarar una variable con un objeto vacío (le llamaría mapa tecnicamente es  correcto por que no hablo de estructura (no es objetos lo que almancena, si no la relacion de nombre de paías a codigo de país  ))
@@ -53,12 +53,6 @@ loadYear2 ();
 ctSelector.addEventListener ("change", loadIndicator) 
 
 
-//Función para botón buscar, cambiar de pantalla
-
-
-
-
-
 
 
 //Función para mostrar resultados
@@ -67,18 +61,22 @@ const showResults = () => {  // mostrar resultados
     const selectedCountryID = ctSelector.value;
     const countryName =  ctSelector.options[selectedCountryID].innerHTML;
     const countryCode= ctNameToCtCode[countryName];
+   
     
      const indicatorsID = indSelector.value;
      const indicatorName = indSelector.options[indicatorsID].innerHTML;
-     
+      
     
     const sinceYearsID = yrSelector.value;
     const yearNumber = yrSelector.options[sinceYearsID].innerHTML;
-    
+
+
     
     //const untilYears = document.getElementById("until-year").value;
      result = filterData (countryCode, indicatorName, yearNumber); 
-    document.getElementById("results").innerHTML = result;
+     document.getElementById("filter").innerHTML = indicatorName;
+    document.getElementById("indicator").innerHTML = result + "%";
+    document.getElementById("year").innerHTML = yearNumber;
     search  ();
 }
 document.getElementById("search").addEventListener ("click",showResults);
@@ -87,7 +85,7 @@ document.getElementById("search").addEventListener ("click",showResults);
 // bOTON PARA PASAR A LA PAGINA SIGUIENTE
 const search = () => {
     document.getElementById("choose-data").style.display = "none";
-    document.getElementById("results").style.display = "inline";
+    document.getElementById("resuts").style.display = "inline";
 }
 
     

@@ -1,0 +1,64 @@
+[33mcommit 1e702e862c3481a29891358d6d54894244dfa896[m[33m ([m[1;36mHEAD -> [m[1;32mSelectors_autofill[m[33m, [m[1;31morigin/Selectors_autofill[m[33m)[m
+Author: Ana Flores <anafrs26@gmail.com>
+Date:   Thu Feb 21 00:14:03 2019 -0600
+
+    Imprimir en pantalla porcentaje de función filtrar
+
+[33mcommit 68498cc011edbdb4868e78682ee2dc9a2136fd40[m
+Author: Ana Flores <anafrs26@gmail.com>
+Date:   Wed Feb 20 08:31:45 2019 -0600
+
+    Agregar funcion en main.js, para mostrar resultado de porcentaje en pantalla
+
+[33mcommit eb2f89493fa327e195b6638c7d4a1565d616b13a[m
+Author: Ana Flores <anafrs26@gmail.com>
+Date:   Tue Feb 19 09:17:26 2019 -0600
+
+    Agregue Botón buscar en html
+
+[33mcommit afb16aff419c24a74df900864a5d529cef6966bc[m
+Author: Ana Flores <anafrs26@gmail.com>
+Date:   Tue Feb 19 08:28:58 2019 -0600
+
+    Agregar función filtrar
+
+[33mcommit b862fd82eb646706acb90c6a70e37ea15214fcaa[m
+Author: Ana Flores <anafrs26@gmail.com>
+Date:   Mon Feb 18 13:28:46 2019 -0600
+
+    Comentar codigo de main.js
+
+[33mcommit 46824981c2660d6564faab977e08ee245b499115[m
+Author: Ana Flores <anafrs26@gmail.com>
+Date:   Sun Feb 17 18:58:42 2019 -0600
+
+    Crear selectores en base a la data
+
+[33mcommit 5c429404129b277c9799218ac92cce540615553c[m[33m ([m[1;31morigin/implement_filter[m[33m, [m[1;32mimplement_filter[m[33m)[m
+Author: AnaFR <47005716+AnaFR@users.noreply.github.com>
+Date:   Fri Feb 15 10:18:52 2019 -0600
+
+    Revert "Prueba para aprender a usar PR (pull resquest)"
+
+[33mcommit 51875f4ead52bac1c9a1e245734369f96af83f48[m
+Merge: 3696dd9 524630b
+Author: AnaFR <47005716+AnaFR@users.noreply.github.com>
+Date:   Fri Feb 15 10:18:43 2019 -0600
+
+    Merge pull request #1 from daphnemx/master
+    
+    Prueba para aprender a usar PR (pull resquest)
+
+[33mcommit 524630b0ca2e0347ddf2ecc54bf15eda060b35db[m
+Author: Laboratoria <me@claudiagarfias.works>
+Date:   Fri Feb 15 10:12:37 2019 -0600
+
+    Prueba para aprender a usar PR (pull resquest)
+
+[33mcommit 3696dd96314191926230b9f07280f7ebb9d03925[m
+Author: Juan La Jara <wxomb@99.200-57-1.clientesbestel.com.mx>
+Date:   Tue Feb 12 19:53:43 2019 -0600
+
+    First Commit
+    
+    Good luck!
