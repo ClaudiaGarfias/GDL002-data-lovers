@@ -1,57 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Data Lovers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>Data Lovers v 0,1</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="assets/wblabofavicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet"> 
   </head>
   <body>
-    <div id="choose-data">
-   
-      <h1>WORLD BANK </h1>
+    <div id="root">
 
-      <!-- opcion filtar por pais -->
-      <label for="country">Filtrar por país</label> <!-- etiqueta con nombre filtrar por país -->
-      <select id = "country"> <!-- selector para país con un identificador para después llamarlo desde js -->
-      <option value="">Seleccionar</option> <!-- agregar opción fija para seleccionar -->
-     </select> <br><br><br>
+      <section id="choose-data" >
+
+        <header>
+          <div id="logo-container">
+          <img src="assets/World_Bank_logo.png" alt="World_Bank_logo" id="logo-banco-mundial">
+          <h1>Explorador de datos sobre las mujeres</h1>
+          </div>
+
+          <h2>Bienvenid@ a nuestro sitio:</h2>
+          <p>Esta web contiene datos sobre las mujeres de 4 países: <strong>México, Perú , Chile y Brasil</strong>.<br>Estos datos fueron tomados del <a href="http://www.bancomundial.org/" target="_blank">Banco Mundial</a> y curados por el equipo de <a href="https://www.laboratoria.la/" target="_blank">Laboratoria</a>.</p><br><h3>¿A quién va dirigido este sitio?</h3><p>A todas las personas interesadas en recabar información sobre las condiciones: social, familiar, económica, demográfica, de igualdad, entre otras, de las mujeres  de los países ya mencionados.<br>Aquí también pueden compararse algunos datos de las mujeres con el sexo masculino, por lo que también se incluyen estadísticas sobre los hombres.<br></p>
+        </header>
+
+        <div class="credits">
+          <p>A continuación puedes <strong>visualizar, filtrar, ordenar y comparar</strong> estas estadísticas.</p><br><br>
+        </div>
+          
+          
         
-      <!-- opcion filtar por indicador -->
-      <label for="select-indicator">Filtrar por indicador</label> <!-- etiqueta con nombre filtrar por indicador-->
-      <select id ="select-indicator"> <!-- selector para indicador -->
-      <option value="">Selecciona</option><!-- agregar opción fija para seleccionar -->
-    </select> <br><br><br>
 
+        <section id="choose-data-inner">
+          <h2>Filtrar datos:</h2>
 
-     <!-- opcion filtar por año -->
-     <label for="since-year">Filtrar por año desde </label> <!-- etiqueta con nombre filtrar por año -->
-     <select id ="since-year"> <!-- selector para año -->
-     <option value="">Selecciona</option> <!-- agregar opción fija para seleccionar -->
-    </select> 
+          <!--filtar por país-->
+          <h3 for="select-country">PAÍS</h3><br>
+          <select id = "select-country"> 
+            <option value="">Selecciona</option> <!--opción fija del selector-->
+          </select>
 
-    <label for="until-year">Filtrar por año hasta</label> <!-- etiqueta con nombre filtrar por año -->
-    <select id ="until-year"> <!-- selector para año -->
-    <option value="">Selecciona</option> <!-- agregar opción fija para seleccionar -->
-   </select> <br><br><br>
-   <button id = "search">Buscar</button> 
-  </div>
-    <div id= "results"><br> <br><br><!-- mostrar resultados -->
-      <p type="text" id= "filter"> </p> </p> <br><br>
-      <p type="text" id= "indicator" ></p> 
-      <p type="text" id= "year"></p> 
+          <br>
+          
+          <!--filtar por indicador-->
+          <h3 for="select-indicator">INDICADOR</h3> <br>
+          <select id ="select-indicator"> 
+            <option value="">Selecciona</option>
+          </select>
 
+          <br>
 
-    </div>
+          <!-- opcion filtar por año "since" -->
+          <h3 class="label-title">AÑO</h3> <br>
+          <label for="since-year">Desde: </label>
+          <select id ="since-year"> 
+            <option value="">Selecciona</option> 
+          </select> 
 
+           <!-- opcion filtar por año "until"-->
+          <label for="until-year">Hasta: </label> 
+          <select id ="until-year">
+            <option value="">Selecciona</option> 
+          </select>
 
+          <br>
 
-     
+          <button id = "search" class="button-purple">BUSCAR</button> 
 
-    
-  
-   <script src="./data/worldbank/worldbank.js"></script> 
-    
-    <script src="data.js"></script>
-    <script src="main.js"></script>
+        </section>
+        
+      </section><!--final de la section "choose-data"-->
+
+      
+      
+      <section id="results" hidden>
+         <h2>Estadísticas filtradas:</h2>
+
+<!--          <table class="tabla">
+            <caption>Indicador buscado:<p id="indicator-selected"> <i>Aquí irá el indicador seleccionado por el usuario</i></caption>
+            <tr>
+              <th>Año</th>
+              <th>Cantidad (número) o Porcentaje (%):</th>
+            </tr>
+            <tr>
+              <td id="year"><i>Aquí el año</i></td>
+              <td id="figure"><i>Aquí la cantidad o porcentaje(%)</i></td>
+            </tr>
+          </table> -->
+
+          <br>
+          <h3>SECCION PROVISIONAL PARA MOSTRAR RESULTADOS SPRINT 1</h3>
+          <p id= "indicator-result" ></p> <br> <!--párrafo PROVISIONAL para checar el resultado que arroje la función filter-->
+          <p id= "figure-result" ></p> <br> <!--párrafo PROVISIONAL para checar el resultado que arroje la función filter-->
+          <p id= "year-result" ></p> <br> <!--párrafo PROVISIONAL para checar el resultado que arroje la función filter-->
+          <p> <strong>*ND</strong> = No hay Dato.</p>
+          <button  id="reload" >Regresar al inico</button>
+      </section><!--final de la section "results"-->
+
+      <div class="credits">
+          <p>Esta web fue creada gracias a la colaboración de:</p>
+          <div class="credits-logos">
+          <a href="http://www.bancomundial.org/" target="_blank"><img src="assets/World_Bank_logo_small_purple.png" alt="World_Bank_logo_small_purple"></a> 
+          <a href="https://www.gob.mx/inmujeres/" target="_blank"><img src="assets/logo-inm-mex.png" alt="logo-inm-mex.png"></a>
+          <a href="https://www.laboratoria.la/" target="_blank"><img src="assets/logo_laboratoria_small_pink.png" alt="logo_laboratoria_small_pink"></a> 
+          </div>
+         </div>
+
+      <footer>
+        <p>©2019 Diseño y código por: <a href="https://github.com/AnaFR" target="_blank">Ana Laura Flores Rosas</a> & <a href="https://claudiagarfias.works/" target="_blank">Claudia Garfias</a>, los datos fueron tomados de la base pública del World Bank y curados por el equipo de Laboratoria.<br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional.</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Licencia Creative Commons" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" / ></a></p>   
+
+      </footer> 
+   
+     </div><!--final del div "root"-->
+
+  <script src="./data/worldbank/worldbank.js"></script> 
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+
   </body>
 </html>
