@@ -73,23 +73,32 @@
       
       
       <section id="results" hidden>
-         <h2>Estadísticas filtradas:</h2>
-
-<!--          <table class="tabla">
-            <caption>Indicador buscado:<p id="indicator-selected"> <i>Aquí irá el indicador seleccionado por el usuario</i></caption>
-            <tr>
-              <th>Año</th>
-              <th>Cantidad (número) o Porcentaje (%):</th>
-            </tr>
-            <tr>
-              <td id="year"><i>Aquí el año</i></td>
-              <td id="figure"><i>Aquí la cantidad o porcentaje(%)</i></td>
-            </tr>
-          </table> -->
+         <h2>Resultados de la búsqueda:</h2>
+         <div id= "results-country-indicator"> 
+          <p id ="country-result"></p>
+          <p id= "indicator-result" ></p> <br> <!--párrafo PROVISIONAL para checar el resultado que arroje la función filter-->
+         </div> 
+         <div id = "results-figure">
+           <h3>AÑO VALOR</h3>
+           <div id="figure-row">
+           <p><strong>*ND</strong>=No hay dato.</p>
+           <div id= "advanced-options">
+             <p>Ordenar:</p>
+             <select id ="order"> 
+              <option id="upward">Ascendente</option> 
+              <option id="falling">Descendente</option><br>
+              <input type="radio" id= "hide-empty"> 
+              <label for = "hide-empty">Ocultar ND</label>
+              <br>
+              <button  id="search-advanced">Buscar</button>
+              </select>
+            </div>  
+            </div>
+          </div>    
 
           <br>
           <h3>SECCION PROVISIONAL PARA MOSTRAR RESULTADOS SPRINT 1</h3>
-          <p id= "indicator-result" ></p> <br> <!--párrafo PROVISIONAL para checar el resultado que arroje la función filter-->
+          
           <p id= "figure-result" ></p> <br> <!--párrafo PROVISIONAL para checar el resultado que arroje la función filter-->
           <p id= "year-result" ></p> <br> <!--párrafo PROVISIONAL para checar el resultado que arroje la función filter-->
           <p> <strong>*ND</strong> = No hay Dato.</p>
