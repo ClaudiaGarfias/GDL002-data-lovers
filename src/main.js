@@ -61,33 +61,11 @@ const loadYear2 = () => {
 };
 
 
-////////////FUNCION CARGAR AÑOS DE CLAUDIA///////////////////////////
-// const loadYearClaudia =(indicatorSelectedByUser, selectorId) => {
-
-//     const indicatorSelected = indSelector.options[indicatorSelectedByUser.target.value].innerHTML;
-//     //trae valor de indicador seleccionado por el usuario
-
-//     const dataFromIndicator = WORLDBANK[countryNameToCountryCode[countrySelected]].indicators[indicatorSelected].data;
-
-//     for (let i=dataFromIndicator[0]; i<=dataFromIndicator.length; i++ ) {
-
-//         const yearSelectorToLoad = document.getElementById(selectorId).options [i+1] = new Option(i);
-//     }
-
-// };
-//////////////////////////////////////////////////////////////////////
-
-
 // invocar funciones para iniciar
 loadCountry();
 loadYear();
 loadYear2 ();
 ctSelector.addEventListener ("change", loadIndicator) 
-
-
-//FUNCION CARGAR AÑOS DE CLAUDIA
-//indSelector.addEventListener("change", loadYearClaudia)
-
 
 
 
