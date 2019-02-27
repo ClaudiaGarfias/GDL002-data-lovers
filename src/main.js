@@ -6,7 +6,7 @@ const countryNameToCountryCode = {}; //objeto creado para almacenar los nombres 
 const indicatorNameToIndicatorCode ={}; //objeto creado para almacenar los nombres de los indicadores y hacer cambio nombre:código
 
 // Función para cargar países
-const loadCountry = (loadIndicator) => {//El parámetro es la funcion loadIndicator 
+const loadCountry = () => {//El parámetro es la funcion loadIndicator 
 
     for (let i = 0; i < Object.keys(WORLDBANK).length; i++) {  // itera en las keys
         const ctCode = Object.keys(WORLDBANK)[i]; //trae el indice de cada key
@@ -24,11 +24,10 @@ const loadIndicator = (countrySelectedByUser) => {
     //trae el valor de País seleccionado por el usuario del selector "país"
     const countryIndicators = WORLDBANK[countryNameToCountryCode[countrySelected]].indicators; 
     //llama el valor seleccionado del objeto countryNameToCountryCode,cambia Perú por PER y trae sus indicadores
-    for (let i =0; i < countryIndicators.length; i++) {;//itera en los índices de los indicadores
-        //console.log(i);
+    for (let i =0; i < countryIndicators.length; i++) {//itera en los índices de los indicadores
+        
 
-        const indicatorIdx = countryIndicators[i];
-        //console.log(indicatorIdx);
+        
 
         const getIndicatorName = countryIndicators[i].indicatorCode;
         //trae el código de cada indice de los indicadores
@@ -56,7 +55,7 @@ const loadYear = () => {
 // Función para año hasta  //*Tarea juntar las funciones de año
 const loadYear2 = () => {  
     for (let i = 1960; i <= 2017 ; i++) { // Implementar el ciclo para indicar los años
-        yrSelectorUntil.options[i - 1959] = new Option(i, i - 1959) // se utiliza la resta para saltarme la opción seleccionar de mi html (ya que no es parte de mi objeto )
+        yrSelectorUntil.options[i - 1959] = new Option(i, i - 1959); // se utiliza la resta para saltarme la opción seleccionar de mi html (ya que no es parte de mi objeto )
     }
 };
 
@@ -65,7 +64,7 @@ const loadYear2 = () => {
 loadCountry();
 loadYear();
 loadYear2 ();
-ctSelector.addEventListener ("change", loadIndicator) 
+ctSelector.addEventListener ("change", loadIndicator);
 
 
 
@@ -92,20 +91,20 @@ const showResults = () => {  // mostrar resultados
 
     
     //const untilYears = document.getElementById("until-year").value;
-     result = rangeFilterData  (countryCode, indicatorsID, yearNumberSince, yearNumberUntil); 
+    const result = window.rangeFilterData (countryCode, indicatorName, yearNumberSince, yearNumberUntil); 
      document.getElementById("indicator-result").innerHTML = `<strong>Nombre del Indicador:</strong> ${indicatorName}<br>`;
     document.getElementById("figure-result").innerHTML =`<strong>Cantidad o porcentaje:</strong> ${result}<br>`;
     document.getElementById("year-result").innerHTML = `<strong>Rango de años:</strong> ${yearNumberSince} - ${yearNumberUntil}<br>`;
 
     search  ();
-}
+};
 document.getElementById("search").addEventListener ("click",showResults);
 
 // bOTON PARA PASAR A LA PAGINA SIGUIENTE
 const search = () => {
     document.getElementById("choose-data").style.display = "none";
     document.getElementById("results").style.display = "inline";
-}
+};
 // boton para regresar a la pagina anterior
 
  
@@ -114,5 +113,3 @@ const reload = () => {
 };
 
 document.getElementById("reload").addEventListener ("click", reload);
-
-    

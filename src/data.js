@@ -1,13 +1,13 @@
-const filterData = (country,indicatorNm,year) => {
-  const countryData = WORLDBANK[country]
-  const countryIndicators = countryData.indicators
-   for (let i= 0;  i < countryIndicators.length; i++) {
-    const indicatorData= countryIndicators[i]
-    if (indicatorData.indicatorCode = indicatorNm ) {
+const filterData = (country,indicatorNm,year) =>{
+  const countryData = WORLDBANK[country];
+  const countryIndicators = countryData.indicators;
+   for (let i= 0;  i < countryIndicators.length; i++){
+    const indicatorData= countryIndicators[i];
+    if (indicatorData.indicatorName == indicatorNm ){
      const figure = indicatorData.data[year];
  
-     if (figure == "") {
-         return `<p id="resultOk">${year} : "ND"</p>`
+     if (figure == ""){
+         return `<p id="resultOk">${year} : "ND"</p>`;
      }
      
  
@@ -16,8 +16,8 @@ const filterData = (country,indicatorNm,year) => {
  
     }
  
-   };
- }
+   }
+ };
  
  const rangeFilterData = (country, indicatorNm, sinceYear, untilYear) => {
   const yearsData = [];
@@ -30,11 +30,24 @@ const filterData = (country,indicatorNm,year) => {
  
  
  };
+
+
+
+
+
+ 
+
+ //const calcAvg =() => {
+
+
+ //};
  
  
+ //const sortData = () => {
+
+ //};
  
  
- 
- window.filterData = filterData
- window.rangeFilterData = rangeFilterData
+ window.filterData = filterData;
+ window.rangeFilterData = rangeFilterData;
 

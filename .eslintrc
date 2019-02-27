@@ -7,7 +7,7 @@
   },
   "extends": "eslint:recommended",
   "globals": {
-    "cipher": false
+    "datalovers": false, "WORLDBANK" : false
   },
   "rules": {
     "no-console": 0,
