@@ -4,14 +4,14 @@ const filterData = (country,indicatorNm,year) =>{
    for (let i= 0;  i < countryIndicators.length; i++){
     const indicatorData= countryIndicators[i];
     if (indicatorData.indicatorName == indicatorNm ){
-     const figure = indicatorData.data[year];
+     const statistic = indicatorData.data[year];
  
-     if (figure == ""){
+     if (statistic == ""){
          return `<p id="resultOk">${year} : "ND"</p>`;
      }
      
  
-     const resultOk = `<p id="resultOk">${year} : ${figure.toFixed(1)}</p>`;
+     const resultOk = `<p id="resultOk">${year} : ${statistic.toFixed(1)}</p>`;
      return resultOk;
  
     }
@@ -50,4 +50,3 @@ const filterData = (country,indicatorNm,year) =>{
  
  window.filterData = filterData;
  window.rangeFilterData = rangeFilterData;
-
