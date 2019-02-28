@@ -30,8 +30,8 @@ const filterData = (country,indicatorNm,year) =>{
     yearsData [currentYear -sinceYear]= filterData(country, indicatorNm, currentYear);
  
   }
-  calcAvg();
-  alert(sortkey());
+  //calcAvg();
+  //alert(sortStatisticMin());
   return yearsData.join("");
  
  
@@ -39,39 +39,62 @@ const filterData = (country,indicatorNm,year) =>{
 
 
 
- const calcAvg =() => {
-  const dataAvg = Object.values(resultsObject);
-  let dataFilter = dataAvg.filter(x => x != "");
-  if (0 < dataFilter.length) {
-    let avg =dataFilter.reduce(function(a, b){ return a + b; });
-    let promedio =  avg /dataFilter.length;
-    console.log(promedio);
-  }
- };
 
 
+ const sortStatisticMin = () => {
+  const orderValues = Object.values(resultsObject); //.map(i => resultsObject[i]);
+  orderValues.sort((a,b) => {
+   //console.log(b);
+    if (a > b) {
+      return 1;
+    }
+    if (a< b) {
+      return -1;
+    }
+    return 0;
+  });
+  return orderValues;
+  
+   };
 
- 
-const sortkey = () => {
-  const orderkey = Object.values(resultsObject);
-orderkey.sort((a,b) => {
-  if (a > b) {
-    return 1;
-  }
-  if (a< b) {
-    return -1;
-  }
-  return 0;
-});
-return orderkey;
+  const sortStatisticMax = () => {
+  const orderValues = Object.values(resultsObject);//.map(i => resultsObject[i]);
+  orderValues.sort((a,b) => {
+   //console.log(b);
+    if (a < b) {
+      return 1;
+    }
+    if (a > b) {
+      return -1;
+    }
+    return 0;
+  });
+  return orderValues;
+  
+   };
 
- };
 
+   const calcAvg =() => {
+    const dataAvg = Object.values(resultsObject);
+    let dataFilter = dataAvg.filter(x => x != "");
+    if (0 < dataFilter.length) {
+      let avg =dataFilter.reduce(function(a, b){ return a + b; });
+      let promedio =  avg /dataFilter.length;
+      console.log(promedio);
+      console.log(typeof(promedio));
+      document.getElementById("print-average").innerHTML = `<strong>PROMEDIO: </strong>${promedio.toFixed(1)}`;
+      
+
+    }
+    //return promedio;
+   };
   
 
- //};
- 
- 
+
+
+
+
  window.filterData = filterData;
  window.rangeFilterData = rangeFilterData;
+ window.calcAvg = calcAvg;
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <title>Data Lovers v 0,1</title>
+    <title>Explorador de datos sobre las mujeres</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="assets/wblabofavicon.png">
     <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet"> 
@@ -14,12 +14,11 @@
       <header>
           <nav class="flex-row">
             <div class="flex-column">
-               <img src="assets/World_Bank_logo.png" alt="World_Bank_logo" id="logo-banco-mundial">
+               <a id="reload-from-logo"><img src="assets/World_Bank_logo.png" alt="World_Bank_logo" id="logo-banco-mundial"></a>
             </div>
-            <div id="main-menu">
-
+            <div id="main-menu" class="flex-row">
               <ul class="flex-row">
-                <li><a href="#">Info</a></li>
+                <li><a href="https://github.com/AnaFR/GDL002-data-lovers/blob/master/README.md" target="_blank">Info</a></li>
                 <li><a href="#choose-data-inner">Filtrar Datos</a></li>
                 <li><a href="#footer">Contacto</a></li>
               </ul>
@@ -41,7 +40,7 @@
        
 
         <div class="credits">
-          <p>A continuación puedes <strong>visualizar, filtrar, ordenar y comparar</strong> estas estadísticas.</p><br><br>
+          <p>Aquí se pueden <strong>｜ filtrar ｜ ordenar ｜ promediar ｜ </strong> estos datos</p><br><br>
         </div>
           
           
@@ -50,19 +49,22 @@
         <section id="choose-data-inner">
           <h2>Filtrar datos:</h2>
 
-          <!--filtar por país-->
-          <h3>PAÍS</h3><br>
-          <select id = "select-country"> 
-            <option value="">Selecciona</option> <!--opción fija del selector-->
-          </select>
+          <div><!--filtar por país-->
+            <h3 for="select-country">PAÍS</h3><br>
+            <select id = "select-country"> 
+              <option value="">Selecciona</option> <!--opción fija del selector-->
+            </select>
+          </div>
+          
 
           <br>
           
-          <!--filtar por indicador-->
-          <h3>INDICADOR</h3> <br>
+          <div><!--filtar por indicador-->
+          <h3 for="select-indicator">INDICADOR</h3> <br>
           <select id ="select-indicator"> 
             <option value="">Selecciona</option>
           </select>
+          </div>
 
           <br>
 
@@ -82,7 +84,6 @@
           <br>
 
           <button id = "search" class="button-purple">BUSCAR</button> 
-          <button id = "ordenar" class="button-purple">Ordenar</button> 
 
         </section>
         
@@ -103,12 +104,12 @@
             <p>Ordenar:</p>
             <select id ="order"> 
               <option id="upward">Ascendente</option> 
-              <option id="falling">Descendente</option>
-            </select>
+              <option id="falling">Descendente</option><br>
               <input type="radio" id= "hide-empty"> 
               <label for = "hide-empty">Ocultar ND</label>
               <br>
               <button  id="search-advanced">Buscar</button>
+            </select>
             </div>  
             </div>
           </div>    
@@ -120,7 +121,14 @@
           <p id= "figure-result" ></p> <br> <!--párrafo PROVISIONAL para checar el resultado que arroje la función filter-->
           <p id= "year-result" ></p> <br> <!--párrafo PROVISIONAL para checar el resultado que arroje la función filter-->
           <p> <strong>*ND</strong> = No hay Dato.</p>
+          
+          <button  id="sortMax">Mayor a Menor</button>
+          <button  id="sortMin">Menor a Mayor</button>
+          <button  id="average">Promediar</button>
+          <br>
           <button  id="reload" >Regresar al inico</button>
+          <br>
+          <p id="print-average"></p>
       </section><!--final de la section "results"-->
 
       <div class="credits">
@@ -133,15 +141,29 @@
          </div>
 
       <footer id="footer">
-        ©2019 Diseño y código por: <a href="https://github.com/AnaFR" target="_blank">Ana Laura Flores Rosas</a> &amp; <a href="https://claudiagarfias.works/" target="_blank">Claudia Garfias</a>, los datos fueron tomados de la base pública del World Bank y curados por el equipo de Laboratoria.
+        <p><strong>©2019</strong> Diseño y código por: <a href="https://github.com/AnaFR" target="_blank">Ana Laura Flores Rosas</a>, <a href="https://claudiagarfias.works/" target="_blank">Claudia Garfias</a> & Liz García los datos fueron tomados de la base pública del World Bank y curados por el equipo de Laboratoria.<br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Licencia Creative Commons Atribución-No-Comercial-Compartir-Igual 4.0 Internacional.</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Licencia Creative Commons" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" / ></a></p>   
 
       </footer> 
+
+      <div id="menu-mobile">
+           
+              <ul>
+                <li><a id="reload-from-mobile-menu"><img src="assets/home.png" alt="home icon"></a></li>
+                <li><a href="https://github.com/AnaFR/GDL002-data-lovers/blob/master/README.md" target="_blank"><img src="assets/info.png" alt="info icon"></a></li>
+                <li><a href="#choose-data-inner"><img src="assets/filtrar.png" alt="filtrar icon"></a></li>
+                <li class="last"><a href="#footer"><img src="assets/contacto.png" alt="contacto icon"></a></li>
+                <!-- <li><a href="#">Teacher's Room</a></li>
+                <li><a href="#">Contact</a></li> -->
+              </ul>
+          
+      </div>
    
      </div><!--final del div "root"-->
 
   <script src="./data/worldbank/worldbank.js"></script> 
   <script src="data.js"></script>
   <script src="main.js"></script>
-
+<!--   <script src="order.js"></script>
+ -->
   </body>
 </html>

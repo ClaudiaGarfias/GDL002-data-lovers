@@ -90,24 +90,22 @@ const showResults = () => {  // mostrar resultados
     const yearNumberUntil = yrSelectorUntil.options[untilYearID].innerHTML;
 
     
-    //const untilYears = document.getElementById("until-year").value;
-    const result = window.rangeFilterData (countryCode, indicatorName, yearNumberSince, yearNumberUntil); 
-     document.getElementById("indicator-result").innerHTML = `<strong>Nombre del Indicador:</strong> ${indicatorName}<br>`;
-    document.getElementById("figure-result").innerHTML =`<strong>Cantidad o porcentaje:</strong> ${result}<br>`;
-    document.getElementById("year-result").innerHTML = `<strong>Rango de años:</strong> ${yearNumberSince} - ${yearNumberUntil}<br>`;
+const result = window.rangeFilterData (countryCode, indicatorName, yearNumberSince, yearNumberUntil); 
+document.getElementById("indicator-result").innerHTML = `<strong>Nombre del Indicador:</strong> ${indicatorName}<br>`;
+document.getElementById("figure-result").innerHTML =`<strong>Cantidad o porcentaje:</strong> ${result}<br>`;
+document.getElementById("year-result").innerHTML = `<strong>Rango de años:</strong> ${yearNumberSince} - ${yearNumberUntil}<br>`;
 
-    search  ();
+search  ();
 };
 document.getElementById("search").addEventListener ("click",showResults);
 
-// bOTON PARA PASAR A LA PAGINA SIGUIENTE
+// FUNCION PARA PASAR A LA PANTALLA DE RESULTADOS
 const search = () => {
     document.getElementById("choose-data").style.display = "none";
     document.getElementById("results").style.display = "inline";
 };
-// boton para regresar a la pagina anterior
 
- 
+// FUNCION PARA RECARGAR LA PAGINA
 const reload = () => {
     location.reload (true);   
 };
@@ -115,4 +113,26 @@ const reload = () => {
 document.getElementById("reload").addEventListener ("click", reload);
 
 
-//document.getElementById("ordenar").addEventListener ("click", sortKey());
+// BOTONES DE OPCIONES AVANZADAS
+document.getElementById("sortMin").addEventListener ("click", sortStatisticMin);
+sortStatisticMin();
+document.getElementById("sortMax").addEventListener ("click", sortStatisticMax);
+sortStatisticMax();
+
+//const averageResult = window.calcAvg();
+//document.getElementById("average").addEventListener ("click", calcAvg);
+
+const averagePrinted =() => {
+
+}
+
+document.getElementById("average").addEventListener ("click", calcAvg);
+//document.getElementById("print-average").innerHTML = `<strong>PROMEDIO:</strong> ${averagePrinted}<br>`
+
+
+// BOTONES PARA REFRESCAR PAGINA
+document.getElementById("reload").addEventListener ("click", reload);
+document.getElementById("reload-from-logo").addEventListener ("click", reload);
+document.getElementById("reload-from-mobile-menu").addEventListener ("click", reload);
+window.scrollTo(0, 0);
+

@@ -13,12 +13,14 @@ body{
 
 header {
 	color: #ffff;
-	
   	padding: 1rem auto .5rem auto;
+  	position: fixed;
+  	width: 100%;
+  	background-color: #9d00d0;
 }
 nav{
-	background-color: #ffff;
-	padding: .65rem;
+	/*! background-color: #ffff; */
+	padding: 0 .65rem;
 }
 
 .flex-column { 
@@ -31,36 +33,46 @@ nav{
 	flex-direction: row;
 	align-items: center;
 	justify-content:space-between;
-
 }
 
 li {
+	color: #cd7ce7;
+	font-size: 1.15rem;
 	padding: .25rem 1rem;
 	/*background-color: red; */
-	margin: .25rem;
-	border: 1px solid #cd7ce7;
-	border-radius: 5px;
+/*	margin: .25rem;
+*/	border-right: 1px solid #cd7ce7;
 	list-style-type: none;
 }
+li a{
+	color:#ffff;
+}
+
+/*#main-menu {
+	display: inline;
+	float: left;
+}*/
 
 .search-bar {
-	max-width: 120px;
+	max-width: 140px;
 	margin-right: 3rem;
 	height: 2.35rem;
 	-webkit-appearance: none;
 	border: 1px solid #cd7ce7;
-	border-radius: 5px;
-	background-color:  #fff1dd;
-	background-image: url(assets/search-solid.svg);
+	border-radius: 2px;
+	background-image: url(assets/search-icon.png);
+	background-position: right;
 	background-repeat:no-repeat;
-	text-align: left;
+	display: inline;
+	text-align: right;
 	margin-left: .25rem;
 	padding: .5rem;
+	background-color:#FFFFFF26;
 }
 
 
 #description-container{
-	padding: 4.5rem 8.5rem 5rem 8.5rem;
+	padding: 8rem 8.5rem 5rem 8.5rem;
 	background-image: url('assets/niña-mirada-fija-background.jpg');
 	height: auto;
   	/* Center and scale the image nicely */
@@ -72,8 +84,13 @@ li {
 }
 
 #logo-banco-mundial {
-	margin: 0;
-	max-width: 250px;
+	margin: 0.5rem 0 0 3rem;
+	max-width: 250px !important;
+	
+}
+
+#reload-from-logo{
+	cursor: pointer;
 }
 
 
@@ -93,7 +110,7 @@ li {
 }
 
 .credits p {
-	font-size: 1.1rem;
+	font-size: 1.35rem;
 	color: #626262;
 
 }
@@ -138,7 +155,7 @@ h1 {
 	margin: 0 auto 9rem auto;
 	font-size: 2.85rem;
 	font-weight: 600;
-	color: #cd7ce7;
+	color: #ffff;
 	/*text-shadow: 3px -3px 12px #000000;*/
 }
 
@@ -162,18 +179,25 @@ p, label {
 p strong {
 	font-weight: 500;
 }
+#description-container a {
+	color: #ffff;
+	border-bottom: 1px solid #cd7ce7;
+	padding-bottom: 0 !important;
+	text-decoration: none;
+}
 
 a {
 	color: #cd7ce7;
 	text-decoration: none;
 }
 
-a:hover {
+#description-container a:hover, a:hover {
 	color: #f999f3;
 }
 
 header h2 {
 	color: #ffff;
+	position: fixed;
 }
 
 
@@ -181,7 +205,7 @@ select {
 	-webkit-appearance: none;
 	background-color: #ffff;
 	background: url(assets/select-arrow.png) no-repeat right #ddd;
-	border-radius: 5px;
+	border-radius: 2px;
 	border: none;
 	font-size: 1.05rem;
 	font-weight: 200;
@@ -191,7 +215,7 @@ select {
 
 .button-purple {
 	background-color: #9d00d0;
-	border-radius: 5px;
+	border-radius: 2px;
 	border: none;
 	color: #ffff;
 	cursor: pointer;
@@ -224,7 +248,7 @@ select {
 footer {
 	color: #ffff;
   	height: 100%;
-  	padding: 3.5rem 8rem 0.5rem 8rem;
+  	padding: 6rem 8rem 0.5rem 8rem;
 	background-color: #242424;
 	width: 100%;
 	margin: 0;
@@ -233,10 +257,56 @@ footer {
 footer p {
 	font-size: .85rem;
 }
+#menu-mobile {
+	display: none;
+	color: #ffff;
+	position: fixed;
+	width: 100%;
+	background-color: #9d00d0;
+	bottom: 0%;
+	max-height: 3rem;
+}
+
+#menu-mobile nav{
+	padding: 0;
+}
+
+#menu-mobile ul{
+	display: flex;
+	flex-direction: row;
+/*	align-items: center;
+*/	justify-content:space-around;
+/*	justify-content: center;	
+*/	padding: .5rem 1rem;
+	margin: auto;
+}
+
+#menu-mobile li{
+	display: inline;
+	text-align: center;
+	padding: 0 1rem;
+	margin: auto;
+	border: 0;
+}
+
+#menu-mobile li.last{
+	border: 0;
+}
+
+#menu-mobile img {
+	max-height: 2rem;
+}
+
+#reload-from-mobile-menu{
+	cursor: pointer;
+}
 
 
 /* For mobile phones: */
 @media only screen and (max-width: 768px) {
+	#menu-mobile {
+	display: block;
+}
 	
 	nav #main-menu {
 		display: none !important;
@@ -244,7 +314,7 @@ footer p {
 
 	#logo-banco-mundial {
 		max-width: 180px;
-		margin: auto;
+		margin: .75rem auto;
 		text-align: center;
 		display: block;
 	}
@@ -253,7 +323,7 @@ footer p {
 		text-align: center;
 		padding: 0;
 		margin:auto;
-		font-size: 2rem;
+		font-size: 2.25rem;
 	}
 	h2{
 		font-size: 1.55rem;
@@ -266,6 +336,7 @@ footer p {
 	header {
 		height: 100%
 		padding: 1rem !important;
+		position: absolute;
 	}
 
 
@@ -275,7 +346,7 @@ footer p {
 	}
 
 	#description-container{
-		padding:.5rem;
+		padding: 6rem .5rem .5rem 0;
 	}
 
 	section label{
@@ -289,7 +360,7 @@ footer p {
 	}	
 
 	footer {
-		padding: 1rem;
+		padding: 1.5rem 1rem 3rem 1rem;
 	}
 
 	.flex-column, .flex-row{
@@ -297,6 +368,5 @@ footer p {
 	}
 
 }
-
 
 
