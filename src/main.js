@@ -113,3 +113,6 @@ const reload = () => {
 };
 
 document.getElementById("reload").addEventListener ("click", reload);
+
+
+//document.getElementById("ordenar").addEventListener ("click", sortKey());
