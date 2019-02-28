@@ -119,15 +119,8 @@ sortStatisticMin();
 document.getElementById("sortMax").addEventListener ("click", sortStatisticMax);
 sortStatisticMax();
 
-//const averageResult = window.calcAvg();
-//document.getElementById("average").addEventListener ("click", calcAvg);
-
-const averagePrinted =() => {
-
-}
 
 document.getElementById("average").addEventListener ("click", calcAvg);
-//document.getElementById("print-average").innerHTML = `<strong>PROMEDIO:</strong> ${averagePrinted}<br>`
 
 
 // BOTONES PARA REFRESCAR PAGINA
