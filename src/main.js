@@ -1,28 +1,42 @@
-const ctSelector = document.getElementById("select-country") ;   // llamar el selector de país
-const indSelector = document.getElementById("select-indicator"); // Declarar una variable para que me genere los indicadores de los paises
-const yrSelectorSince = document.getElementById("since-year"); // Declarar una variable para que me genere el rango de los años automaticamente en mi selector para año 
-const yrSelectorUntil = document.getElementById ("until-year");
-const countryNameToCountryCode = {}; //objeto creado para almacenar los nombres de los países y hacer cambio Perú:PER
-const indicatorNameToIndicatorCode ={}; //objeto creado para almacenar los nombres de los indicadores y hacer cambio nombre:código
+const ctSelector = document.getElementById("select-country") ;   // llama el selector de país
+const indSelector = document.getElementById("select-indicator"); //llama selector de indicadores
+const yrSelectorSince = document.getElementById("since-year"); // llama selector de año "desde" 
+const yrSelectorUntil = document.getElementById ("until-year");// llama selector de año "hasta"
+const countryNameToCountryCode = {}; //objeto generado para almacenar los nombres de los países y hacer cambio Perú:PER
+const indicatorNameToIndicatorCode ={}; //objeto grenerado para almacenar los nombres de los indicadores y hacer cambio nombre:código
 
-// Función para cargar países
+// const codeOfCountry = Object.keys(window.WORLDBANK);
+// const nameOfCountry = window.WORLDBANK[codeOfCountry].indicators[0].countryName;
+// console.log(codeOfCountry);
+// console.log(nameOfCountry)
+
+
+// Función para cargar países en las opciones del selector
 const loadCountry = () => {//El parámetro es la funcion loadIndicator 
 
     for (let i = 0; i < Object.keys(window.WORLDBANK).length; i++) {  // itera en las keys
         const ctCode = Object.keys(window.WORLDBANK)[i]; //trae el indice de cada key
+        // console.log(ctCode);
+
         countryNameToCountryCode[window.WORLDBANK[ctCode].indicators[0].countryName] = ctCode; 
+
         //crea la propiedad Name y le da el valor del código en el objeto countryNameToCountryCode
         ctSelector.options[i + 1] = new Option(window.WORLDBANK[ctCode].indicators[0].countryName, i + 1); 
+        // console.log(window.WORLDBANK[ctCode].indicators[0].countryName);
         //empuja cada nombre del país a cada opción del selector "país"
     }
 };
 
+// console.log(countryNameToCountryCode);
 
 // Función para cargar indicadores 
 const loadIndicator = (countrySelectedByUser) => { 
     const countrySelected = ctSelector.options[countrySelectedByUser.target.value].innerHTML;
+    console.log(countrySelected);
     //trae el valor de País seleccionado por el usuario del selector "país"
     const countryIndicators = window.WORLDBANK[countryNameToCountryCode[countrySelected]].indicators; 
+    // console.log(countryIndicators);
+
     //llama el valor seleccionado del objeto countryNameToCountryCode,cambia Perú por PER y trae sus indicadores
     for (let i =0; i < countryIndicators.length; i++) {//itera en los índices de los indicadores
 
@@ -32,11 +46,21 @@ const loadIndicator = (countrySelectedByUser) => {
         //trae el nombre de cada indice de los indicadores
         indicatorNameToIndicatorCode[getIndicatorCode] = getIndicatorName;
         //crea la propiedad indicatorCode y le asigna el valor de indicatorName en el objeto indicatorNameToIndicatorCode
-        //console.log(indicatorNameToIndicatorCode);
         indSelector.options [i+1] = new Option (getIndicatorCode, i +1);
+
+        for (const prop in indicatorNameToIndicatorCode) {
+          console.log(`${prop} = ${indicatorNameToIndicatorCode[prop]}`);
+           document.getElementById("indicators-table").innerHTML = `<td>${prop}</td><td>${indicatorNameToIndicatorCode[prop]}</td>`;
+
+        }
+        // let values = [];
+        // values.push(Object.values(indicatorNameToIndicatorCode)[i]);
+        // console.log(values.join("<br>"));
+        // document.getElementById("indicators-code").innerHTML = `<tr><th><td>${values}</td></th></tr>`;
     }
    
 };
+
 
 
 // Función para cargar años al selector de año desde
@@ -59,6 +83,7 @@ loadCountry();
 loadYear();
 loadYear2 ();
 ctSelector.addEventListener ("change", loadIndicator);
+
 
 
 

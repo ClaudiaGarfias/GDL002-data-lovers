@@ -3,9 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <!-- <meta name="description" content="Explorador de datos del Banco Mundial sobre las mujeres">
-    <meta property="og:image" content="assets/peruana_mujer.png"> -->
-
     <meta property="og:site_name" content="Explorador de datos del Banco Mundial sobre las mujeres">
     <meta property="og:locale" content="es_MX">  
     <meta property="og:type" content="website"> 
@@ -17,7 +14,7 @@
     <meta name="author" content="Ana Flores & Claudia Garfias at https://www.laboratoria.la/">
     <title>Explorador de datos sobre las mujeres</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="assets/wblabofavicon.png">
+    <link rel="icon" type="image/png" href="assets/dataexplorerfavicon.png">
     <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet"> 
   </head>
 
@@ -26,7 +23,7 @@
       <header>
           <nav class="flex-row">
             <div class="flex-column">
-               <a id="reload-from-logo"><img src="assets/World_Bank_logo_small_purple.png" alt="World_Bank_logo" id="logo-banco-mundial"></a>
+               <a id="reload-from-logo"><img src="assets/banco-mundial-explorador-logo.png" alt="logo principal" id="logo-banco-mundial"></a>
             </div>
             <div id="main-menu" class="flex-row">
               <ul class="flex-row">
@@ -75,10 +72,13 @@
               <!-- opcion filtar por año "since" -->
               <div class="years-select">
                 <label for="since-year">Desde: </label>
-                <select id ="since-year"> 
+                <select id ="since-year"> <!-- onchange="this.nextElementSibling.value=this.value" --> 
                   <option value="">Selecciona</option> 
                 </select> 
+                <!-- <input type="text" name="format" value=""/>  -->
               </div>
+
+
 
                <!-- opcion filtar por año "until"-->
               <div class="years-select">
@@ -129,20 +129,21 @@
 
       </section><!--final de la section "results"-->
 
+       <div id="indicators-code" style="height: 600rem;">
+                <table id="indicators-table"></table>
+              </div>
+
+
       <div class="parallax-credits">
         <div class="credits">
           <p>Esta web fue creada gracias a la colaboración de:</p>
           <div class="flex-row-center">
-            <a href="http://www.bancomundial.org/" target="_blank"><img src="assets/World_Bank_logo_small_purple.png" alt="World_Bank_logo_small_purple"></a> 
-            <a href="https://www.gob.mx/inmujeres/" target="_blank"><img src="assets/logo-inm-mex.png" alt="logo-inm-mex.png"></a>
-            <a href="https://www.laboratoria.la/" target="_blank"><img src="assets/logo_laboratoria_small_pink.png" alt="logo_laboratoria_small_pink"></a> 
+            <a href="http://www.bancomundial.org/" target="_blank"><img src="assets/The_World_Bank_logo.svg.png" alt="World_Bank_logo_small_purple"></a> 
+            <a href="https://www.gob.mx/inmujeres/" target="_blank"><img src="assets/logo_INM_Logo_Fondo_Blanco_gobmx.png" alt="logo-inm-mex.png"></a>
+            <a href="https://www.laboratoria.la/" target="_blank"><img src="assets/logo_laboratoria.png" alt="logo_laboratoria_small_pink"></a> 
           </div>
         </div>
       </div>
-
-      <footer id="footer">
-        <p><strong>©2019</strong> Diseño y código por: <a href="https://github.com/AnaFR" target="_blank">Ana Laura Flores Rosas</a>, <a href="https://claudiagarfias.works/" target="_blank">Claudia Garfias</a> & Liz García.<br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Licencia Creative Commons</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Licencia Creative Commons" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/></a></p>   
-      </footer> 
 
       <div id="menu-mobile">
         <ul>
@@ -152,6 +153,13 @@
           <li class="last"><a href="#footer"><img src="assets/contacto.png" alt="contacto icon"></a></li>
               </ul>
       </div>
+
+
+
+    <footer id="footer">
+        <p><strong>©2019</strong> Diseño y código por: <a href="https://github.com/AnaFR" target="_blank">Ana Laura Flores Rosas</a>, <a href="https://claudiagarfias.works/" target="_blank">Claudia Garfias</a> & Liz García.<br>Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Licencia Creative Commons</a><br><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="Licencia Creative Commons" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"/></a></p>   
+      </footer> 
+
    
      </div><!--final del div "root"-->
 
