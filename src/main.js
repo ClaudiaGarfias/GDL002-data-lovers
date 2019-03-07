@@ -27,8 +27,27 @@ const loadCountry = () => {//El parámetro es la funcion loadIndicator
     }
 };
 
-// console.log(countryNameToCountryCode);
+const indicatorsTable = () => {
+        let indicatorsTable = document.getElementById("indicators-table");
 
+    //         const countrySelected = ctSelector.options[country.target.value].innerHTML;
+
+    // const countryIndicators = window.WORLDBANK[countryNameToCountryCode[countrySelected]].indicators; 
+
+    //     const getIndicatorName = countryIndicators[i].indicatorCode;
+
+    //     const getIndicatorCode = countryIndicators[i].indicatorName;
+
+    //     indicatorNameToIndicatorCode[getIndicatorName] = getIndicatorCode;
+
+        indicatorsTable += "<tr><th>CÓDIGO DE INDICADOR</th><th>NOMBRE DE INDICADOR</th></tr>";
+        for (const code in indicatorNameToIndicatorCode) {
+            indicatorsTable += `<tr><td>${code}</td><td>${indicatorNameToIndicatorCode[code]}</td></tr>`;
+            document.getElementById("indicators-table").innerHTML = indicatorsTable;
+          // console.log(`${prop} = ${indicatorNameToIndicatorCode[prop]}`);
+        }
+};
+    
 // Función para cargar indicadores 
 const loadIndicator = (countrySelectedByUser) => { 
     const countrySelected = ctSelector.options[countrySelectedByUser.target.value].innerHTML;
@@ -44,15 +63,10 @@ const loadIndicator = (countrySelectedByUser) => {
         //trae el código de cada indice de los indicadores
         const getIndicatorCode = countryIndicators[i].indicatorName;
         //trae el nombre de cada indice de los indicadores
-        indicatorNameToIndicatorCode[getIndicatorCode] = getIndicatorName;
+        indicatorNameToIndicatorCode[getIndicatorName] = getIndicatorCode;
         //crea la propiedad indicatorCode y le asigna el valor de indicatorName en el objeto indicatorNameToIndicatorCode
         indSelector.options [i+1] = new Option (getIndicatorCode, i +1);
 
-        for (const prop in indicatorNameToIndicatorCode) {
-          console.log(`${prop} = ${indicatorNameToIndicatorCode[prop]}`);
-           document.getElementById("indicators-table").innerHTML = `<td>${prop}</td><td>${indicatorNameToIndicatorCode[prop]}</td>`;
-
-        }
         // let values = [];
         // values.push(Object.values(indicatorNameToIndicatorCode)[i]);
         // console.log(values.join("<br>"));
@@ -61,6 +75,7 @@ const loadIndicator = (countrySelectedByUser) => {
    
 };
 
+console.log(indicatorNameToIndicatorCode);
 
 
 // Función para cargar años al selector de año desde
@@ -78,11 +93,17 @@ const loadYear2 = () => {
 };
 
 
+
+
+
+
 // invocar funciones para iniciar
 loadCountry();
 loadYear();
 loadYear2 ();
+indicatorsTable();
 ctSelector.addEventListener ("change", loadIndicator);
+ctSelector.addEventListener ("change", indicatorsTable);
 
 
 
