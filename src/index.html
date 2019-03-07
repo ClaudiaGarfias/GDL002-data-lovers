@@ -18,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet"> 
   </head>
 
+
   <body>
     <div id="root">
       <header>
@@ -95,6 +96,63 @@
         </section><!--final de la section "choose-data-inner"-->
 
       </section><!--final de la section "choose-data"-->
+
+
+      <section id="choose-data-screen">
+        
+        <article id="country-buttons" class="flex-row-center">
+          <div class="flex-select">
+            <h3>SELECCIONA EL PAÍS:</h3><br>
+            <input type="button" id="mex-button" value=" PERÚ " class="button-purple">
+            <input type="button" id="mex-button" value=" MÉXICO " class="button-purple"> 
+            <input type="button" id="mex-button" value=" BRASIL " class="button-purple">
+            <input type="button" id="mex-button" value=" CHILE " class="button-purple"> 
+          </div>
+        </article>
+        
+        <article class="flex-select">
+          <h3>SELECCIONA LA CATEGORÍA</h3><br>          
+          <aside id="financiacion-aside" class="flex-aside">
+            <label class="label-title">FINANCIACIÓN</label>            
+          </aside>
+          <aside id="capital-humano-aside">
+            <label class="label-title">CAPITAL HUMANO</label>             
+          </aside>
+          <aside id="economia-aside">
+            <label class="label-title">ECONOMÍA</label>            
+          </aside>
+          <aside id="milicia-aside" >
+            <label class="label-title">MILICIA</label>
+          </aside>
+          <aside id="proteccion-social-aside" >
+            <label class="label-title">PROTECCIÓN SOCIAL</label>
+          </aside>
+          <aside id="educacion-aside" >
+            <label class="label-title">EDUCACIÓN</label>
+          </aside>
+          <aside id="igualdad-aside" >
+            <label class="label-title">IGUALDAD</label>
+          </aside>
+          <aside id="salud-aside" >
+            <label class="label-title">SALUD</label>
+          </aside>
+          <aside id="empleo-aside" >
+            <label class="label-title">EMPLEO</label>
+          </aside>
+          <aside id="matrimonio-aside" >
+            <label class="label-title" >MATRIMONIO</label>
+          </aside>
+          <aside id="demografia-aside" >
+            <label class="label-title">DEMOGRAFÍA</label>
+          </aside>
+          <aside id="salud-reproductiva-aside" >
+            <label class="label-title">SALUD REPRODUCTIVA</label>
+          </aside>
+
+        </article>
+
+      </section>
+      
       
       <!-- SECCION  PARA MOSTRAR RESULTADOS -->
       <section id="results" hidden>
@@ -130,6 +188,7 @@
       </section><!--final de la section "results"-->
 
        <div id="indicators-code">
+
                 <table id="indicators-table"></table>
               </div>
 

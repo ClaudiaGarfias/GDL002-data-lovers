@@ -28,23 +28,12 @@ const loadCountry = () => {//El parámetro es la funcion loadIndicator
 };
 
 const indicatorsTable = () => {
+    // let indicatorsTableDiv = document.getElementById("indicators-code");
         let indicatorsTable = document.getElementById("indicators-table");
-
-    //         const countrySelected = ctSelector.options[country.target.value].innerHTML;
-
-    // const countryIndicators = window.WORLDBANK[countryNameToCountryCode[countrySelected]].indicators; 
-
-    //     const getIndicatorName = countryIndicators[i].indicatorCode;
-
-    //     const getIndicatorCode = countryIndicators[i].indicatorName;
-
-    //     indicatorNameToIndicatorCode[getIndicatorName] = getIndicatorCode;
-
-        indicatorsTable += "<tr><th>CÓDIGO DE INDICADOR</th><th>NOMBRE DE INDICADOR</th></tr>";
+        indicatorsTable += `<caption>INDICADORES</caption><tr><th>CÓDIGO DE INDICADOR</th><th>NOMBRE DE INDICADOR</th></tr>`;
         for (const code in indicatorNameToIndicatorCode) {
             indicatorsTable += `<tr><td>${code}</td><td>${indicatorNameToIndicatorCode[code]}</td></tr>`;
             document.getElementById("indicators-table").innerHTML = indicatorsTable;
-          // console.log(`${prop} = ${indicatorNameToIndicatorCode[prop]}`);
         }
 };
     
